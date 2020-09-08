@@ -10,7 +10,7 @@ class NewsRelation:
         self.mongo_db = settings.MONGO_DB
         self.client = MongoClient(self.mongo_uri)
         self.db = self.client[self.mongo_db]
-        self.collection = db[self.collection_name]
+        self.collection = self.db[self.collection_name]
 
     def proceed(self):
         for item in self.collection.find():
